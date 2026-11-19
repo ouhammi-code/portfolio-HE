@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hasna Er-Raqqady — Academic Portfolio
 
-## Getting Started
-
-First, run the development server:
+Static academic portfolio for a geoscience researcher. Built with Next.js 16 (App Router, Cache Components), React 19, TypeScript, Tailwind CSS v4, Framer Motion and Lucide. It has no backend, database, API or authentication. Every page is prerendered as static HTML.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All personal information lives in `/data`. The pages never hard-code facts.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| File | Contents |
+| --- | --- |
+| `data/profile.ts` | Name, title, institution, e-mail, profile links, biography |
+| `data/education.ts` | Degrees and internships (they also feed the stratigraphic timeline) |
+| `data/research.ts` | Research interests, the doctoral research sections, figure plates |
+| `data/publications.ts` | Publications (the library, filters and JSON-LD update automatically) |
+| `data/projects.ts` | Fieldwork and projects, with their galleries |
+| `data/conferences.ts` | Conferences, collaborators, other activities |
+| `data/skills.ts` | Expertise groups |
+| `data/images.ts` | Image registry (paths, alt text, credits) |
 
-## Learn More
+### Placeholders
 
-To learn more about Next.js, take a look at the following resources:
+Information that could not be verified is written as `pending("what to add")`. The site shows these values as dashed **"To be added"** notes. To fill one in, replace the `pending(...)` call with the real value.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To hide every remaining placeholder before sharing the site publicly, set:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+NEXT_PUBLIC_SHOW_PLACEHOLDERS=false
+```
 
-## Deploy on Vercel
+### Images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The researcher's portrait (`public/images/profile/hasna-laboratory.jpg`) is original material. Every landscape and mineral photo in `public/images/geology` is a stock photograph (Unsplash Licence) marked `illustrative: true`, and the site labels each one **Illustrative**. To swap in real field photos:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Add the files under `public/images/fieldwork` or `public/images/research`.
+2. Register them in `data/images.ts` without the `illustrative` flag.
+3. Reference them from `data/projects.ts` or `data/research.ts` (`researchPlates`).
+
+## Sources (verified 19 Nov 2026)
+
+- **ResearchGate**: PhD Student, Université Moulay Ismail de Meknès, Department of Applied Geosciences. Skills and expertise. Two publications.
+- **LinkedIn**: PhD student, Drâa-Tafilalet. Licence ST from FST Errachidia (2017–2020). Master ST from FST Settat (started 2020). Internships at SMI/Managem (2019), ABH Guir-Ziz-Rhéris (2020) and CMT Tighza (2022). Skills.
+- **Crossref**: full author list, volume and article number for DOI `10.1016/j.jafrearsci.2025.105937`.
+- **Doctoral thesis title**: taken from the project brief.
+
+Citation counts and read statistics are left out on purpose, because they change over time.
+
+## Deployment
+
+Set `NEXT_PUBLIC_SITE_URL` (for example `https://hasna-er-raqqady.vercel.app`) so canonical URLs, Open Graph tags, `sitemap.xml` and `robots.txt` use the real domain. The site deploys to Vercel with no other configuration.
+
+## Structure
+
+```
+app/            pages: /, about, research, publications, fieldwork, conferences, contact
+                plus sitemap.ts, robots.ts, not-found.tsx
+components/
+  layout/       SiteHeader, SiteFooter, BackToTop
+  hero/         HomeHero (+ parallax)
+  research/     InterestCards, CrossSection (conceptual SVG)
+  publications/ PublicationCard, PublicationLibrary (search + filters)
+  gallery/      FieldMosaic, ProjectGallery (lightbox)
+  timeline/     StratColumn (journey drawn as a stratigraphic log)
+  shared/       PageHero, SectionHeading, Reveal, Figure, Pending, Buttons, ContactForm, JsonLd …
+data/           all content
+lib/            site config, timeline builder
+```
