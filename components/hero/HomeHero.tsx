@@ -1,10 +1,14 @@
 import { ArrowDown } from "lucide-react";
 import { profile } from "@/data/profile";
 import { images } from "@/data/images";
+import type { SiteImage } from "@/data/types";
 import { ButtonLink, ExternalButton } from "@/components/shared/Buttons";
 import { LinkedInIcon, ResearchGateIcon } from "@/components/shared/BrandIcons";
 import { IllustrativeBadge } from "@/components/shared/Figure";
 import { HeroParallax, HeroText } from "./HeroMotion";
+
+/** Original field photograph of the Saghro massif. */
+const heroImage: SiteImage = images.saghroPanorama;
 
 export function HomeHero() {
   const facts = [
@@ -16,7 +20,7 @@ export function HomeHero() {
 
   return (
     <section aria-labelledby="hero-title" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-forest-deep text-ivory">
-      <HeroParallax image={images.atlasRanges} />
+      <HeroParallax image={heroImage} />
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-forest-deep/90 via-forest-deep/55 to-forest-deep/10" />
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-forest-deep via-transparent to-forest-deep/40" />
 
@@ -66,7 +70,7 @@ export function HomeHero() {
       >
         <ArrowDown className="h-4 w-4 animate-bounce" strokeWidth={1.5} />
       </a>
-      <IllustrativeBadge className="absolute right-4 bottom-3 sm:right-6 lg:bottom-4" />
+      {heroImage.illustrative && <IllustrativeBadge className="absolute right-4 bottom-3 sm:right-6 lg:bottom-4" />}
     </section>
   );
 }

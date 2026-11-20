@@ -4,6 +4,8 @@ import { PageHero } from "@/components/shared/PageHero";
 import { Reveal } from "@/components/shared/Reveal";
 import { Maybe, PendingNote } from "@/components/shared/Pending";
 import { ProjectGallery } from "@/components/gallery/ProjectGallery";
+import { SaghroPlates } from "@/components/gallery/SaghroPlates";
+import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CollaborationCTA } from "@/components/shared/CollaborationCTA";
 import { projects } from "@/data/projects";
 import { profile } from "@/data/profile";
@@ -28,13 +30,26 @@ export default function FieldworkPage() {
           </>
         }
         intro="Geological field observations, mapping, rock sampling, mineral investigations and applied projects across Morocco."
-        image={images.tiltedStrata}
+        image={images.saghroBeddedSequence}
       />
 
       <section className="py-16 lg:py-24">
         <div className="container-page">
+          <section aria-labelledby="saghro-title" className="mb-24 lg:mb-32">
+            <SectionHeading
+              eyebrow="Anti-Atlas · Saghro"
+              id="saghro-title"
+              align="split"
+              title={<>Field plates from the <em>Saghro massif</em></>}
+              intro="Landscapes and outcrops of the Saghro massif, Eastern Anti-Atlas: original field photographs."
+            />
+            <div className="mt-12">
+              <SaghroPlates />
+            </div>
+          </section>
+
           <Reveal className="mb-14 max-w-3xl">
-            <PendingNote note="Original field and laboratory photographs. The galleries currently use labelled illustrative images — replace them in data/projects.ts with photos stored in /public/images/fieldwork." />
+            <PendingNote note="More original field and laboratory photographs (sampling, mines, laboratory). Some project galleries still use labelled illustrative images; replace them in data/projects.ts with photos stored in /public/images/fieldwork." />
           </Reveal>
 
           {/* Index */}

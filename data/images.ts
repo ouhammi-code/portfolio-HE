@@ -16,6 +16,40 @@ export const images = {
     width: 1200,
     height: 1600,
   },
+  /* ── Original field photographs — Anti-Atlas, Saghro massif ── */
+  saghroPanorama: {
+    src: "/images/fieldwork/saghro-panorama.jpg",
+    alt: "View from a boulder-strewn ridge of the Saghro massif across a desert plain towards distant Anti-Atlas ranges",
+    width: 1600,
+    height: 1198,
+  },
+  saghroPeaks: {
+    src: "/images/fieldwork/saghro-peaks.jpg",
+    alt: "Rocky peaks of the Saghro massif with patches of snow, above a village and its fields",
+    credit: "© moha",
+    width: 1600,
+    height: 831,
+  },
+  saghroFoldedBeds: {
+    src: "/images/fieldwork/saghro-folded-beds.jpg",
+    alt: "Steeply dipping, folded alternations of dark fissile layers and greenish competent beds in a Saghro outcrop",
+    width: 1200,
+    height: 1600,
+  },
+  saghroBeddedSequence: {
+    src: "/images/fieldwork/saghro-bedded-sequence.jpg",
+    alt: "Well-bedded grey-green sequence cut by closely spaced fractures, with a geological hammer for scale",
+    width: 1600,
+    height: 1200,
+  },
+  saghroFoliatedOutcrop: {
+    src: "/images/fieldwork/saghro-foliated-outcrop.jpg",
+    alt: "Close-up of a foliated outcrop with pale lenticular layers and clasts, a pen for scale",
+    width: 1600,
+    height: 1200,
+  },
+
+  /* ── Illustrative stock photographs ── */
   atlasRanges: {
     src: "/images/geology/atlas-ranges.jpg",
     alt: "Layered red and ochre mountain ranges of Morocco stretching to the horizon",

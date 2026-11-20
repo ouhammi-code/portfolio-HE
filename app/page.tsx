@@ -11,6 +11,7 @@ import { InterestCards } from "@/components/research/InterestCards";
 import { CrossSection } from "@/components/research/CrossSection";
 import { PublicationCard } from "@/components/publications/PublicationCard";
 import { FieldMosaic } from "@/components/gallery/FieldMosaic";
+import { SaghroPlates } from "@/components/gallery/SaghroPlates";
 import { StratColumn } from "@/components/timeline/StratColumn";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { profile } from "@/data/profile";
@@ -158,11 +159,28 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Anti-Atlas · Saghro field plates ─────────── */}
+      <section aria-labelledby="saghro-title" className="grain py-24 lg:py-32">
+        <div className="container-page">
+          <SectionHeading
+            index="05"
+            eyebrow="Anti-Atlas · Saghro"
+            id="saghro-title"
+            align="split"
+            title={<>In the field, <em>Saghro massif</em></>}
+            intro="Original field photographs from the Saghro massif in the Eastern Anti-Atlas: its landscapes, outcrops and the bedded, folded rocks of the Precambrian inlier."
+          />
+          <div className="mt-14">
+            <SaghroPlates />
+          </div>
+        </div>
+      </section>
+
       {/* ── Fieldwork ───────────────────────────────── */}
       <section aria-labelledby="field-title" className="bg-sand-soft/60 py-24 lg:py-32">
         <div className="container-page">
           <SectionHeading
-            index="05"
+            index="06"
             eyebrow="Fieldwork & projects"
             id="field-title"
             align="split"
@@ -186,7 +204,7 @@ export default function HomePage() {
           <div className="lg:col-span-4">
             <div className="lg:sticky lg:top-32">
               <SectionHeading
-                index="06"
+                index="07"
                 eyebrow="Academic journey"
                 id="journey-title"
                 title={<>A personal <em>stratigraphy</em></>}

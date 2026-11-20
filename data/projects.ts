@@ -31,7 +31,7 @@ export const projects: Project[] = [
     objective:
       "Constrain the petrology and isotopic signature of the Upper Ediacaran volcano-sedimentary succession to reconstruct the North Gondwana margin.",
     context: pending("Describe sampling strategy, mapped sections and laboratory work."),
-    gallery: [images.foldedStrata, images.layeredOutcrop, images.bandedTexture],
+    gallery: [images.saghroPanorama, images.saghroFoldedBeds, images.saghroBeddedSequence, images.saghroFoliatedOutcrop],
     source: "Provided by the researcher",
   },
   {

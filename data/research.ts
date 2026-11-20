@@ -31,7 +31,7 @@ export const researchInterests: ResearchInterest[] = [
     id: "structural",
     title: "Structural Geology",
     summary: "Deformation, fracturing and dyke emplacement as records of the tectonic history of the Anti-Atlas.",
-    image: images.tiltedStrata,
+    image: images.saghroFoldedBeds,
   },
   {
     id: "exploration",
@@ -43,13 +43,13 @@ export const researchInterests: ResearchInterest[] = [
     id: "regional",
     title: "Regional Geology",
     summary: "The Precambrian inliers of the Eastern Anti-Atlas and their place on the North Gondwana margin.",
-    image: images.foldedStrata,
+    image: images.saghroPanorama,
   },
   {
     id: "sedimentology",
     title: "Sedimentology & Volcanology",
     summary: "Volcano-sedimentary successions as archives of eruptive activity and basin evolution.",
-    image: images.layeredOutcrop,
+    image: images.saghroBeddedSequence,
   },
   {
     id: "geophysics",
@@ -80,7 +80,7 @@ export const doctoralResearch = {
   supervisors: pending("Thesis supervisor(s) and co-supervisor(s)") as MaybePending<string>,
   period: pending("Doctoral period (e.g. 2022 – present)") as MaybePending<string>,
   keywords: ["Ediacaran", "Saghro inlier", "Anti-Atlas", "Volcano-sedimentary succession", "Petrology", "Isotope geochemistry", "North Gondwana"],
-  heroImage: images.foldedStrata,
+  heroImage: images.saghroPeaks,
 
   sections: [
     {
@@ -181,9 +181,12 @@ export type FigurePlate = {
 /** Research figures. Items without an image render as placeholders. */
 export const researchPlates: FigurePlate[] = [
   { id: "map", label: "Plate I", caption: "Geological map of the South Saghro inlier" },
-  { id: "field", label: "Plate II", caption: "Field photograph of the volcano-sedimentary succession", image: images.layeredOutcrop },
-  { id: "sample", label: "Plate III", caption: "Hand specimen / rock sample", image: images.bandedTexture },
-  { id: "thin-section", label: "Plate IV", caption: "Thin section under the polarising microscope" },
-  { id: "section", label: "Plate V", caption: "Interpretative geological cross-section" },
-  { id: "diagram", label: "Plate VI", caption: "Geochemical or isotopic diagram" },
+  { id: "landscape", label: "Plate II", caption: "Landscape of the Saghro massif, Anti-Atlas", image: images.saghroPanorama },
+  { id: "field", label: "Plate III", caption: "Well-bedded sequence, Saghro — hammer for scale", image: images.saghroBeddedSequence },
+  { id: "folds", label: "Plate IV", caption: "Steeply dipping, folded beds, Saghro", image: images.saghroFoldedBeds },
+  { id: "outcrop", label: "Plate V", caption: "Outcrop close-up with pale lenticular layers — pen for scale", image: images.saghroFoliatedOutcrop },
+  { id: "sample", label: "Plate VI", caption: "Hand specimen / rock sample" },
+  { id: "thin-section", label: "Plate VII", caption: "Thin section under the polarising microscope" },
+  { id: "section", label: "Plate VIII", caption: "Interpretative geological cross-section" },
+  { id: "diagram", label: "Plate IX", caption: "Geochemical or isotopic diagram" },
 ];
